@@ -8,9 +8,7 @@ const Header = () => {
           <li>HOME</li>
           <li>ABOUT</li>
           <li>CONTACT US</li>
-          <li className="ml-auto rounded-md">
-            <button className="bg-cyan-800 w-10 h-10 ">Cart</button>
-          </li>
+          <li>CART</li>
         </ul>
       </nav>
     </>
