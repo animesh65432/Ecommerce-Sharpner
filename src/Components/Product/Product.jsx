@@ -1,7 +1,13 @@
 import React from "react";
 import { productsArr } from "../../assets/data";
+import { usecontextallthetime } from "../../Stroe/Storeprovider";
 
 const Product = () => {
+  const { additem } = usecontextallthetime();
+
+  const AddTheProductIntoTheCart = (obj) => {
+    additem({ ...obj, count: 0 });
+  };
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       {productsArr.map((obj) => (
@@ -23,7 +29,10 @@ const Product = () => {
               <span className="text-xl font-bold text-rose-600">
                 ${obj.price}
               </span>
-              <button className="bg-rose-600 text-white px-4 py-2 rounded-md ml-2 hover:bg-rose-700">
+              <button
+                className="bg-rose-600 text-white px-4 py-2 rounded-md ml-2 hover:bg-rose-700"
+                onClick={() => AddTheProductIntoTheCart(obj)}
+              >
                 Add to Cart
               </button>
             </div>

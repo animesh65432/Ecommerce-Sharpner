@@ -3,17 +3,17 @@ import Header from "./Components/Header/Header";
 import Product from "./Components/Product/Product";
 import HeaderSummary from "./Components/Header/HeaderSummary";
 import Footer from "./Components/Footer/Footer";
-import Cart from "./Components/Cart/Cart";
+import Storeprovider from "./Stroe/Storeprovider";
 
 const App = () => {
   return (
-    <>
+    <Storeprovider>
       <Header />
       <HeaderSummary />
-      <Cart />
+
       <Product />
       <Footer />
-    </>
+    </Storeprovider>
   );
 };
 export default App;
