@@ -18,16 +18,32 @@ const CartReducer = (state, action) => {
         ...updatedItems[index],
         count: updatedItems[index].count + 1,
       };
-      const money = updatedItems.reduce((acc, cur) => acc + cur.price, 0);
-      return { amount: money, items: updatedItems };
+      const money = updatedItems.reduce(
+        (acc, cur) => acc + cur.price * cur.count,
+        0
+      );
+      return { amount: parseFloat(money.toFixed(2)), items: updatedItems };
     } else {
-      const money = state.items.reduce((acc, cur) => acc + cur.price, 0);
+      const money = state.items.reduce(
+        (acc, cur) => acc + cur.price * cur.count,
+        0
+      );
       return {
-        amount: money,
+        amount: parseFloat(money.toFixed(2)),
         items: [...state.items, { ...action.item, count: 1 }],
       };
     }
+  } else if (action.type === "delete") {
+    const updatedItems = state.items.filter(
+      (obj) => obj.title !== action.item.title
+    );
+    const money = updatedItems.reduce(
+      (acc, cur) => acc + cur.price * cur.count,
+      0
+    );
+    return { amount: parseFloat(money.toFixed(2)), items: updatedItems };
   }
+
   return state;
 };
 
@@ -38,8 +54,12 @@ const Storeprovider = (props) => {
     CartDispatch({ type: "add", item: item });
   };
 
+  const deleteitem = (item) => {
+    CartDispatch({ type: "delete", item: item });
+  };
+
   return (
-    <store.Provider value={{ CartState, additem }}>
+    <store.Provider value={{ CartState, additem, deleteitem }}>
       {props.children}
     </store.Provider>
   );

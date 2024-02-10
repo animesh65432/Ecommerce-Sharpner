@@ -1,11 +1,27 @@
-import { productsArr } from "../../assets/data";
-import { createPortal } from "react-dom";
+import { usecontextallthetime } from "../../Stroe/Storeprovider";
 
 const Cart = () => {
-  return createPortal(
+  const { deleteitem, CartState } = usecontextallthetime();
+
+  const CartArray = CartState.items;
+  const TotalAmount = CartState.amount;
+
+  if (CartArray.length === 0) {
+    return (
+      <div className="bg-white rounded-lg shadow-md p-4">
+        <p className="text-gray-600">Your cart is empty.</p>
+      </div>
+    );
+  }
+
+  const deleteitemfromcart = (obj) => {
+    deleteitem(obj);
+  };
+
+  return (
     <>
-      {productsArr.map((obj) => (
-        <div className="bg-white rounded-lg shadow-md mb-4" key={obj.id}>
+      {CartArray.map((obj) => (
+        <div className="bg-white rounded-lg shadow-md mb-4" key={obj.title}>
           <div className="p-4">
             <div className="flex items-center mb-2">
               <img
@@ -17,7 +33,10 @@ const Cart = () => {
                 <h3 className="font-semibold text-gray-800">{obj.title}</h3>
                 <p className="text-gray-600">Price: ${obj.price.toFixed(2)}</p>
               </div>
-              <button className="text-red-500 hover:text-red-700 focus:outline-none">
+              <button
+                className="text-red-500 hover:text-red-700 focus:outline-none"
+                onClick={() => deleteitemfromcart(obj)}
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-6 w-6"
@@ -35,19 +54,17 @@ const Cart = () => {
               </button>
             </div>
           </div>
-
-          <div className="bg-gray-100 p-4 flex justify-between items-center">
-            <p className="text-lg font-semibold">
-              Total: ${obj.price.toFixed(2)}
-            </p>
-            <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md focus:outline-none">
-              Checkout
-            </button>
-          </div>
         </div>
       ))}
-    </>,
-    document.getElementById("overlays")
+      <div className="bg-gray-100 p-4 flex justify-between items-center">
+        <p className="text-lg font-semibold">
+          Total: ${TotalAmount.toFixed(2)}
+        </p>
+        <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md focus:outline-none">
+          Checkout
+        </button>
+      </div>
+    </>
   );
 };
 

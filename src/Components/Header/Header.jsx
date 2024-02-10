@@ -22,7 +22,10 @@ const Header = () => {
           </li>
           <li>STORE</li>
           <li>CONTACT US</li>
-          <li>CART {numberofitems}</li>
+          <li>
+            <Link to="/Cart">Cart</Link>
+            {numberofitems}
+          </li>
         </ul>
       </nav>
     </>
