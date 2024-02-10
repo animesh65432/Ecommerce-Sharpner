@@ -8,6 +8,7 @@ import HeaderSummary from "./Components/Header/HeaderSummary.jsx";
 import Product from "./Components/Product/Product.jsx";
 import Cart from "./Components/Cart/Cart.jsx";
 import Home from "./Components/Home/Home.jsx";
+import Contact from "./Components/Contact/Contact.jsx";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,10 @@ const router = createBrowserRouter([
       {
         path: "/Product",
         element: <Product />,
+      },
+      {
+        path: "/Contact",
+        element: <Contact />,
       },
     ],
   },

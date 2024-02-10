@@ -23,7 +23,9 @@ const Header = () => {
           <li>
             <Link to="/Product">STORE</Link>
           </li>
-          <li>CONTACT US</li>
+          <li>
+            <Link to="/Contact">Contact Us</Link>
+          </li>
           <li>
             <Link to="/Cart">Cart</Link>
             {numberofitems}
