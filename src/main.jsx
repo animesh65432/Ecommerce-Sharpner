@@ -7,6 +7,7 @@ import About from "./Components/About/About.jsx";
 import HeaderSummary from "./Components/Header/HeaderSummary.jsx";
 import Product from "./Components/Product/Product.jsx";
 import Cart from "./Components/Cart/Cart.jsx";
+import Home from "./Components/Home/Home.jsx";
 
 const router = createBrowserRouter([
   {
@@ -18,7 +19,7 @@ const router = createBrowserRouter([
         element: (
           <>
             <HeaderSummary />
-            <Product />
+            <Home />
           </>
         ),
       },
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "/Cart",
         element: <Cart />,
+      },
+      {
+        path: "/Product",
+        element: <Product />,
       },
     ],
   },

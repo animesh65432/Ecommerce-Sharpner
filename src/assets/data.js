@@ -42,3 +42,6 @@ export const Youtube =
   "https://th.bing.com/th/id/OIP.U2du7MN6lOA0Nc3a3NXvWAAAAA?rs=1&pid=ImgDetMain";
 
 export const NormalImgeas = "https://wallpapercave.com/wp/wp2464987.jpg";
+
+export const HomeImages =
+  "https://wallup.net/wp-content/uploads/2016/01/309145-colorful-multi_color-abstract.jpg";
