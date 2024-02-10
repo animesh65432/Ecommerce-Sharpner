@@ -40,3 +40,5 @@ export const Instagram =
 
 export const Youtube =
   "https://th.bing.com/th/id/OIP.U2du7MN6lOA0Nc3a3NXvWAAAAA?rs=1&pid=ImgDetMain";
+
+export const NormalImgeas = "https://wallpapercave.com/wp/wp2464987.jpg";

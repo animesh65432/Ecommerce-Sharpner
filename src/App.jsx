@@ -4,14 +4,13 @@ import Product from "./Components/Product/Product";
 import HeaderSummary from "./Components/Header/HeaderSummary";
 import Footer from "./Components/Footer/Footer";
 import Storeprovider from "./Stroe/Storeprovider";
+import { Outlet } from "react-router-dom";
 
 const App = () => {
   return (
     <Storeprovider>
       <Header />
-      <HeaderSummary />
-
-      <Product />
+      <Outlet />
       <Footer />
     </Storeprovider>
   );
