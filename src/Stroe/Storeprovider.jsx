@@ -49,8 +49,10 @@ const CartReducer = (state, action) => {
 
 const Storeprovider = (props) => {
   const [CartState, CartDispatch] = useReducer(CartReducer, defaultstate);
-  const [ISlogin, Setlogin] = useState(false);
+  const intiallogin = localStorage.getItem("token");
+  const [userlogin, Setlogin] = useState(intiallogin);
 
+  let ISlogin = !!userlogin;
   const additem = (item) => {
     CartDispatch({ type: "add", item: item });
   };
@@ -59,12 +61,14 @@ const Storeprovider = (props) => {
     CartDispatch({ type: "delete", item: item });
   };
 
-  const login = () => {
-    Setlogin(true);
+  const login = (token) => {
+    Setlogin(token);
+    localStorage.setItem("token", token);
   };
 
   const logout = () => {
-    Setlogin(false);
+    Setlogin("");
+    localStorage.removeItem("token");
   };
 
   return (

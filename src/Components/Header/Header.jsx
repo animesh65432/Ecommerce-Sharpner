@@ -29,10 +29,7 @@ const Header = () => {
           <li>{ISlogin && <Link to="/About">ABOUT</Link>}</li>
           <li>{ISlogin && <Link to="/Product">STORE</Link>}</li>
           <li>{ISlogin && <Link to="/Contact">Contact Us</Link>}</li>
-          <li>
-            {ISlogin && <Link to="/Cart">Cart</Link>}
-            {numberofitems}
-          </li>
+          <li>{ISlogin && <Link to="/Cart">Cart{numberofitems}</Link>}</li>
           <li>
             <Link to="/login">Login</Link>
           </li>

@@ -36,7 +36,8 @@ const Log = () => {
           userEmail,
           userPassword
         );
-        login();
+
+        login(reponse.user.uid);
       } catch (error) {
         alert(error);
       }
