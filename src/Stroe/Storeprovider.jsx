@@ -50,8 +50,7 @@ const CartReducer = (state, action) => {
 const Storeprovider = (props) => {
   const [CartState, CartDispatch] = useReducer(CartReducer, defaultstate);
   const intiallogin = localStorage.getItem("token");
-  console.log(intiallogin);
-  const [userlogin, Setlogin] = useState("");
+  const [userlogin, Setlogin] = useState(intiallogin);
 
   const additem = (item) => {
     CartDispatch({ type: "add", item: item });

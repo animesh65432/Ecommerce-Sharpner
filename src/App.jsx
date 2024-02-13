@@ -10,6 +10,7 @@ import Home from "./Components/Home/Home";
 import Cart from "./Components/Cart/Cart";
 import About from "./Components/About/About";
 import Log from "./Components/Login/Log";
+import ProductProfile from "./Components/Profile/ProductProfile";
 
 const App = () => {
   const { userlogin } = usecontextallthetime();
@@ -26,6 +27,10 @@ const App = () => {
             <Route path="/Home" element={<Home />}></Route>
             <Route path="/About" element={<About />}></Route>
             <Route path="/Cart" element={<Cart />}></Route>
+            <Route
+              path="/ProductProfile/:title"
+              element={<ProductProfile />}
+            ></Route>
           </Routes>
           <Footer />
         </BrowserRouter>

@@ -1,6 +1,7 @@
 import React from "react";
 import { productsArr } from "../../assets/data";
 import { usecontextallthetime } from "../../Stroe/Storeprovider";
+import { Link } from "react-router-dom";
 
 const Product = () => {
   const { additem } = usecontextallthetime();
@@ -29,6 +30,9 @@ const Product = () => {
               <span className="text-xl font-bold text-rose-600">
                 ${obj.price}
               </span>
+              <p>
+                <Link to={`/ProductProfile/${obj.title}`}>See The Details</Link>{" "}
+              </p>
               <button
                 className="bg-rose-600 text-white px-4 py-2 rounded-md ml-2 hover:bg-rose-700"
                 onClick={() => AddTheProductIntoTheCart(obj)}
