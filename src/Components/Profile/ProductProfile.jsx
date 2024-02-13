@@ -13,7 +13,7 @@ const ProductProfile = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto bg-white rounded-xl overflow-hidden md:max-w-2xl">
+    <div className="max-w-md mx-auto bg-white rounded-xl overflow-hidden md:max-w-2xl h-3/5">
       <div className="md:flex">
         <div className="md:flex-shrink-0">
           <img

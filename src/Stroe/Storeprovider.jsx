@@ -52,6 +52,8 @@ const Storeprovider = (props) => {
   const intiallogin = localStorage.getItem("token");
   const [userlogin, Setlogin] = useState(intiallogin);
 
+  const IsUserlogin = !!userlogin;
+
   const additem = (item) => {
     CartDispatch({ type: "add", item: item });
   };
@@ -72,7 +74,7 @@ const Storeprovider = (props) => {
 
   return (
     <store.Provider
-      value={{ CartState, additem, deleteitem, login, logout, userlogin }}
+      value={{ CartState, additem, deleteitem, login, logout, IsUserlogin }}
     >
       {props.children}
     </store.Provider>

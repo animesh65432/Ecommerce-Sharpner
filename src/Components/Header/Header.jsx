@@ -5,7 +5,7 @@ import { auth } from "../../firbase";
 import { signOut } from "firebase/auth";
 
 const Header = () => {
-  const { CartState, logout, userlogin } = usecontextallthetime();
+  const { CartState, logout, IsUserlogin } = usecontextallthetime();
 
   const numberofitems = CartState.items.reduce(
     (acc, cur) => acc + cur.count,
@@ -42,9 +42,7 @@ const Header = () => {
           </p>
           <p></p>
           <li>
-            {userlogin.length > 0 && (
-              <button onClick={Onuserlogout}>log Out</button>
-            )}
+            {IsUserlogin && <button onClick={Onuserlogout}>log Out</button>}
           </li>
         </ul>
       </div>

@@ -8,7 +8,7 @@ const Cart = () => {
 
   if (CartArray.length === 0) {
     return (
-      <div className="bg-white rounded-lg shadow-md p-4">
+      <div className="bg-white rounded-lg shadow-md p-4 h-3/5 font-bold text-center text-3xl">
         <p className="text-gray-600">Your cart is empty.</p>
       </div>
     );
@@ -18,10 +18,14 @@ const Cart = () => {
     deleteitem(obj);
   };
 
+  const OnClickOrder = () => {
+    alert("it will go to your house soon ");
+  };
+
   return (
-    <>
+    <div className="h-3/5">
       {CartArray.map((obj) => (
-        <div className="bg-white rounded-lg shadow-md mb-4" key={obj.title}>
+        <div className="bg-white rounded-lg shadow-md mb-4 " key={obj.title}>
           <div className="p-4">
             <div className="flex items-center mb-2">
               <img
@@ -60,11 +64,14 @@ const Cart = () => {
         <p className="text-lg font-semibold">
           Total: ${TotalAmount.toFixed(2)}
         </p>
-        <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md focus:outline-none">
-          Checkout
+        <button
+          className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md focus:outline-none"
+          onClick={OnClickOrder}
+        >
+          Order
         </button>
       </div>
-    </>
+    </div>
   );
 };
 

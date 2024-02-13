@@ -13,11 +13,11 @@ import Log from "./Components/Login/Log";
 import ProductProfile from "./Components/Profile/ProductProfile";
 
 const App = () => {
-  const { userlogin } = usecontextallthetime();
-  console.log(userlogin);
+  const { IsUserlogin } = usecontextallthetime();
+
   return (
     <>
-      {userlogin.length > 0 ? (
+      {IsUserlogin ? (
         <BrowserRouter>
           <Header />
           <HeaderSummary />
