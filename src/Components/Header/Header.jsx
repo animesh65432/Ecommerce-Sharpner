@@ -1,11 +1,11 @@
 import React from "react";
 import { usecontextallthetime } from "../../Stroe/Storeprovider";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { auth } from "../../firbase";
 import { signOut } from "firebase/auth";
 
 const Header = () => {
-  const { CartState, ISlogin, logout } = usecontextallthetime();
+  const { CartState, logout, userlogin } = usecontextallthetime();
 
   const numberofitems = CartState.items.reduce(
     (acc, cur) => acc + cur.count,
@@ -38,10 +38,14 @@ const Header = () => {
             <Link to="/">Product</Link>
           </p>
           <p>
-            <Link to="/Cart">Cart</Link>
+            <Link to="/Cart">Cart{numberofitems}</Link>
           </p>
           <p></p>
-          <li>{ISlogin && <button onClick={Onuserlogout}>log Out</button>}</li>
+          <li>
+            {userlogin.length > 0 && (
+              <button onClick={Onuserlogout}>log Out</button>
+            )}
+          </li>
         </ul>
       </div>
     </>

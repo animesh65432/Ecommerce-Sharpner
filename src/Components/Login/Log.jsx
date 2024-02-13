@@ -11,7 +11,7 @@ const Log = () => {
   const [userPassword, setUserPassword] = useState("");
   const [isloading, setIsLoading] = useState(false);
   const [IsSingin, Setsingin] = useState(false);
-  const { login, logout, ISlogin } = usecontextallthetime();
+  const { login, logout, userlogin } = usecontextallthetime();
 
   const onchangeUserEmail = (e) => {
     setUserEmail(e.target.value);
@@ -26,7 +26,6 @@ const Log = () => {
   };
 
   const onSubmitHandler = async (e) => {
-    e.preventDefault();
     setIsLoading(true);
 
     if (IsSingin) {
