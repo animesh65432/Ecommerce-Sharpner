@@ -22,31 +22,60 @@ const Header = () => {
   };
 
   return (
-    <>
-      <div className="bg-black text-white h-20 ">
-        <ul className="flex space-x-10 p-7 justify-between">
-          <p>
-            <Link to="/Home">Home</Link>
-          </p>
-          <p>
-            <Link to="/Contact">Contact Us</Link>
-          </p>
-          <p>
-            <Link to="/About">About</Link>
-          </p>
-          <p>
-            <Link to="/">Product</Link>
-          </p>
-          <p>
-            <Link to="/Cart">Cart{numberofitems}</Link>
-          </p>
-          <p></p>
-          <li>
-            {IsUserlogin && <button onClick={Onuserlogout}>log Out</button>}
-          </li>
-        </ul>
-      </div>
-    </>
+    <div className="bg-red-500 text-white h-20">
+      <ul className="flex items-center justify-between px-7">
+        <li>
+          <Link
+            to="/Home"
+            className="text-white hover:text-blue-600 font-bold text-2xl pt-6"
+          >
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/Contact"
+            className="text-white hover:text-blue-600 font-bold text-2xl"
+          >
+            Contact Us
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/About"
+            className="text-white hover:text-blue-600 font-bold text-2xl"
+          >
+            About
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/"
+            className="text-white hover:text-blue-600 font-bold text-2xl"
+          >
+            Product
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/Cart"
+            className="text-white hover:text-blue-600 font-bold text-2xl"
+          >
+            Cart {numberofitems}
+          </Link>
+        </li>
+        <li>
+          {IsUserlogin && (
+            <button
+              onClick={Onuserlogout}
+              className="text-white hover:text-blue-600 focus:outline-none font-bold text-2xl"
+            >
+              Logout
+            </button>
+          )}
+        </li>
+      </ul>
+    </div>
   );
 };
 

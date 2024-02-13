@@ -1,4 +1,5 @@
 import { usecontextallthetime } from "../../Stroe/Storeprovider";
+import { Cartimages } from "../../assets/data";
 
 const Cart = () => {
   const { deleteitem, CartState } = usecontextallthetime();
@@ -10,6 +11,7 @@ const Cart = () => {
     return (
       <div className="bg-white rounded-lg shadow-md p-4 h-3/5 font-bold text-center text-3xl">
         <p className="text-gray-600">Your cart is empty.</p>
+        <img src={Cartimages}></img>
       </div>
     );
   }

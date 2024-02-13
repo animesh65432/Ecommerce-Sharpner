@@ -4,7 +4,7 @@ export const productsArr = [
 
     price: 100,
 
-    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%201.png",
+    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%201.png"
   },
 
   {
@@ -12,7 +12,7 @@ export const productsArr = [
 
     price: 50,
 
-    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%202.png",
+    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%202.png"
   },
 
   {
@@ -20,7 +20,7 @@ export const productsArr = [
 
     price: 70,
 
-    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%203.png",
+    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%203.png"
   },
 
   {
@@ -28,8 +28,8 @@ export const productsArr = [
 
     price: 100,
 
-    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%204.png",
-  },
+    imageUrl: "https://prasadyash2411.github.io/ecom-website/img/Album%204.png"
+  }
 ];
 
 export const FacebookImages =
@@ -45,3 +45,6 @@ export const NormalImgeas = "https://wallpapercave.com/wp/wp2464987.jpg";
 
 export const HomeImages =
   "https://wallup.net/wp-content/uploads/2016/01/309145-colorful-multi_color-abstract.jpg";
+
+export const Cartimages =
+  "https://th.bing.com/th/id/OIP.Bd-aEsGPRVlNaXcfRq0YrgHaFq?rs=1&pid=ImgDetMain";
