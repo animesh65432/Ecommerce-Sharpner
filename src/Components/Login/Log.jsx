@@ -4,12 +4,14 @@ import {
   signInWithEmailAndPassword
 } from "firebase/auth";
 import { auth } from "../../firbase";
+import { usecontextallthetime } from "../../Stroe/Storeprovider";
 
 const Log = () => {
   const [userEmail, setUserEmail] = useState("");
   const [userPassword, setUserPassword] = useState("");
   const [isloading, setIsLoading] = useState(false);
   const [IsSingin, Setsingin] = useState(false);
+  const { login, logout, ISlogin } = usecontextallthetime();
 
   const onchangeUserEmail = (e) => {
     setUserEmail(e.target.value);
@@ -34,9 +36,9 @@ const Log = () => {
           userEmail,
           userPassword
         );
-        console.log(reponse);
+        login();
       } catch (error) {
-        console.assert(error);
+        alert(error);
       }
     } else {
       try {

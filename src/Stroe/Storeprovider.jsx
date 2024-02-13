@@ -1,10 +1,10 @@
-import React, { createContext, useContext, useReducer } from "react";
+import React, { createContext, useContext, useReducer, useState } from "react";
 
 const store = createContext();
 
 const defaultstate = {
   items: [],
-  amount: 0,
+  amount: 0
 };
 
 const CartReducer = (state, action) => {
@@ -16,7 +16,7 @@ const CartReducer = (state, action) => {
       const updatedItems = [...state.items];
       updatedItems[index] = {
         ...updatedItems[index],
-        count: updatedItems[index].count + 1,
+        count: updatedItems[index].count + 1
       };
       const money = updatedItems.reduce(
         (acc, cur) => acc + cur.price * cur.count,
@@ -30,7 +30,7 @@ const CartReducer = (state, action) => {
       );
       return {
         amount: parseFloat(money.toFixed(2)),
-        items: [...state.items, { ...action.item, count: 1 }],
+        items: [...state.items, { ...action.item, count: 1 }]
       };
     }
   } else if (action.type === "delete") {
@@ -49,6 +49,7 @@ const CartReducer = (state, action) => {
 
 const Storeprovider = (props) => {
   const [CartState, CartDispatch] = useReducer(CartReducer, defaultstate);
+  const [ISlogin, Setlogin] = useState(false);
 
   const additem = (item) => {
     CartDispatch({ type: "add", item: item });
@@ -58,8 +59,18 @@ const Storeprovider = (props) => {
     CartDispatch({ type: "delete", item: item });
   };
 
+  const login = () => {
+    Setlogin(true);
+  };
+
+  const logout = () => {
+    Setlogin(false);
+  };
+
   return (
-    <store.Provider value={{ CartState, additem, deleteitem }}>
+    <store.Provider
+      value={{ CartState, additem, deleteitem, login, logout, ISlogin }}
+    >
       {props.children}
     </store.Provider>
   );
